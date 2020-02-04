@@ -155,8 +155,8 @@
 
 
                 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-                //document.addEventListener( 'click', onDocumentClick, false );
-                document.addEventListener( 'touchmove', onDocumentClick, false );
+                document.addEventListener( 'click', onDocumentClick, false );
+                document.addEventListener( 'touchmove', onDocumentTouch, false );
 
                 //
 
@@ -185,8 +185,15 @@
 
             function onDocumentClick( event ) {
 
-                touchX = ( (event.clientX * 8) - windowHalfX*3 );
-                touchY = ( (event.clientY * 8) - windowHalfY*3 );
+                mouseX = ( (event.clientX * 8) - windowHalfX );
+                mouseY = ( (event.clientY * 8) - windowHalfY );
+
+            }
+
+            function onDocumentTouch( event ) {
+
+                touchX = ( (- event.touches[0].clientX * 8) - windowHalfX );
+                touchY = ( (event.touches[0].clientY * 8) - windowHalfY );
 
             }
 
