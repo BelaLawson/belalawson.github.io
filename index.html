@@ -222,36 +222,45 @@
 <!--</script>-->
 
 <style>
+    * {
+    box-sizing: border-box;
+    }
+
     body {
+    margin: 0;
         z-index: -3;
     }
     a {
         color: #08f;
     }
     #flex {
+        margin: 0;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
     }
     #container {
+        margin: 0;
+        box-sizing: border-box;
         z-index: -1;
     }
     .img {
-        position: fixed;
-        z-index: 3;
         mix-blend-mode: color-burn;
-        opacity: 60%;
+        position: absolute;
+        z-index: 6;
+        opacity: 20%;
     }
     #img1 {
-        transform: scale(-1) translateX(-10px) translateY(10px);
+        transform: scale(-4) translateX(-10px) translateY(10px);
     }
     #img2 {
         transform: scale(-3) translateX(-480px) translateY(60px);
     }
     #img3 {
-        transform: scale(-1) translateX(-30px) translateY(5px);
+        transform: scale(-6) translateX(-30px) translateY(5px);
     }
     #img4 {
-        transform: scale(-4) translateX(-280px) translateY(40px);
+        transform: scale(-5) translateX(-280px) translateY(40px);
     }
 </style>
