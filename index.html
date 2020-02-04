@@ -17,6 +17,7 @@
             var camera, scene, renderer;
 
             var mouseX = 0, mouseY = 0;
+            var touchX = 0, touchY = 0;
 
             var windowHalfX = window.innerWidth / 2;
             var windowHalfY = window.innerHeight / 2;
@@ -154,6 +155,7 @@
 
 
                 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+                document.addEventListener( 'click', onDocumentClick, false );
 
                 //
 
@@ -180,6 +182,13 @@
 
             }
 
+            function onDocumentClick( event ) {
+
+                touchX = ( (event.clientX * 8) - windowHalfX*3 );
+                touchY = ( (event.clientY * 8) - windowHalfY*3 );
+
+            }
+
             //
 
             function animate() {
@@ -194,6 +203,8 @@
 
                 camera.position.x += ( mouseX - camera.position.x ) * 0.3;
                 camera.position.y += ( mouseY - camera.position.y ) * 0.3;
+                camera.position.x += ( touchX - camera.position.x ) * 0.3;
+                camera.position.y += ( touchY - camera.position.y ) * 0.3;
 
                 camera.lookAt( scene.position );
 
@@ -237,8 +248,7 @@
         margin: 0;
         box-sizing: border-box;
         display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
     }
     #container {
         margin: 0;
@@ -247,24 +257,23 @@
     }
     .img {
         mix-blend-mode: color-burn;
-        position: absolute;
+        position: fixed;
         z-index: -6;
-        opacity: 90%;
     }
     #img1 {
-        height: 15%;
-        transform: scale(-4) translateX(-120px) translateY(10px);
+        height: 23%;
+        transform: scale(-6) translateY(-1rem);
     }
     #img2 {
-        height: 15%;
-        transform: scale(-3) translateX(-368px) translateY(60px);
+        height: 23%;
+        transform: scale(-3) translateX(-1rem) translateY(-2rem);
     }
     #img3 {
-        height: 15%;
-        transform: scale(-6) translateX(-130px) translateY(5px);
+        height: 23%;
+        transform: scale(-8) translateX(-1rem) translateY(-0.4rem);
     }
     #img4 {
-        height: 15%;
-        transform: scale(-5) translateX(-380px) translateY(40px);
+        height: 23%;
+        transform: scale(-5) translateX(-1rem) translateY(-1.5rem);
     }
 </style>
