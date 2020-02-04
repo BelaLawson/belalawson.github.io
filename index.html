@@ -3,7 +3,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
 
 <div id="app">
-    <div>
+    <div id="flex">
+        <img id="img1" class="img" src="https://picsum.photos/400/800">
+        <img id="img2" class="img" src="https://picsum.photos/400/800">
+        <img id="img3" class="img" src="https://picsum.photos/400/800">
+        <img id="img4" class="img" src="https://picsum.photos/400/800">
         <div id="container"></div>
 
         <script type="module">
@@ -142,9 +146,10 @@
                 mesh.add( wireframe );
                 scene.add( mesh );
 
-                renderer = new THREE.WebGLRenderer( { antialias: true , precision: 'lowp', alpha: true, overdraw: true} );
+                renderer = new THREE.WebGLRenderer( { antialias: true , alpha: true } );
                 renderer.setPixelRatio( window.devicePixelRatio );
                 renderer.setSize( window.innerWidth, window.innerHeight );
+                renderer.setClearColor( 0xffffff, 0 );
                 container.appendChild( renderer.domElement );
 
 
@@ -218,10 +223,35 @@
 
 <style>
     body {
-        background-color: #fff;
-        color: #444;
+        z-index: -3;
     }
     a {
         color: #08f;
+    }
+    #flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    #container {
+        z-index: -1;
+    }
+    .img {
+        position: fixed;
+        z-index: 3;
+        mix-blend-mode: color-burn;
+        opacity: 60%;
+    }
+    #img1 {
+        transform: scale(-1) translateX(-10px) translateY(10px);
+    }
+    #img2 {
+        transform: scale(-3) translateX(-480px) translateY(60px);
+    }
+    #img3 {
+        transform: scale(-1) translateX(-30px) translateY(5px);
+    }
+    #img4 {
+        transform: scale(-4) translateX(-280px) translateY(40px);
     }
 </style>
