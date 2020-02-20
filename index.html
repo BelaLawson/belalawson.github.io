@@ -10,11 +10,6 @@
                 <a v-bind:href="item.url" target="_blank">{{ item.name }}</a>
             </li>
         </ul>
-        <ul ref="leftUl" id="social">
-            <li>
-                <a href="https://www.linkedin.com/in/bela-lawson-636a43152/" target="_blank"><img width="30%" src="https://image.flaticon.com/icons/svg/174/174857.svg"></a>
-            </li>
-        </ul>
 
     </div>
     <div id="flex">
@@ -243,6 +238,11 @@
             }
 
         </script>
+        <ul ref="leftUl" id="social">
+            <li>
+                <a href="https://www.linkedin.com/in/bela-lawson-636a43152/" target="_blank"><img class="socialImg" src="https://image.flaticon.com/icons/svg/174/174857.svg"></a>
+            </li>
+        </ul>
     </div>
 </div>
 
@@ -313,29 +313,37 @@
         transform: scale(-5) translateX(-1rem) translateY(-1.5rem);
     }
     #menu {
-        width: 10em;
         position: absolute;
-        mix-blend-mode: soft-light;
-        font-family: "Open Sans";
-        margin: 5em;
+        font-family: Open Sans, sans-serif;
+        margin: 3em;
     }
     a:link {
-        font-size: 1rem;
-        font-family: "Open Sans";
+        font-size: 20px;
+        font-family: Open Sans, sans-serif;
         text-decoration: none;
         text-transform: uppercase;
+        padding: 1em;
     }
     ul {
         font-size: 1rem;
         list-style-type: none;
-        margin: 0.6rem;
-        padding: 1em;
     }
     li {
+        padding-bottom: 1em;
         font-size: 1rem;
-        padding: 0.5em;
     }
     h1 {
-        color: darkblue;
+        color: midnightblue;
+        padding-bottom: 2em;
+    }
+    #social {
+        position: absolute;
+        margin-top: 10em;
+        padding: 15em;
+    }
+    .socialImg{
+        width: 2em;
+        margin-left: 80em;
+        margin-top: 20em;
     }
 </style>
