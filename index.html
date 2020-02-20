@@ -10,7 +10,11 @@
                 <a v-bind:href="item.url" target="_blank">{{ item.name }}</a>
             </li>
         </ul>
-
+        <ul ref="leftUl" id="social">
+            <li>
+                <a href="https://www.linkedin.com/in/bela-lawson-636a43152/" target="_blank"><img width="30%" class="socialImg" src="https://image.flaticon.com/icons/svg/174/174857.svg"></a>
+            </li>
+        </ul>
     </div>
     <div id="flex">
         <img id="img1" class="img" src="https://picsum.photos/400/800">
@@ -238,11 +242,6 @@
             }
 
         </script>
-        <ul ref="leftUl" id="social">
-            <li>
-                <a href="https://www.linkedin.com/in/bela-lawson-636a43152/" target="_blank"><img class="socialImg" src="https://image.flaticon.com/icons/svg/174/174857.svg"></a>
-            </li>
-        </ul>
     </div>
 </div>
 
@@ -335,15 +334,5 @@
     h1 {
         color: midnightblue;
         padding-bottom: 2em;
-    }
-    #social {
-        position: absolute;
-        margin-top: 10em;
-        padding: 15em;
-    }
-    .socialImg{
-        width: 2em;
-        margin-left: 80em;
-        margin-top: 20em;
     }
 </style>
