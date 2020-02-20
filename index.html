@@ -5,6 +5,7 @@
 <div id="app">
     <div id="menu" ref="menuBar">
         <h1>Bela Lawson</h1>
+        <h3>Recent Productions in Symfony/Wordpress</h3>
         <ul ref="rightUl" id="websites">
             <li v-for="item in items">
                 <a v-bind:href="item.url" target="_blank">{{ item.name }}</a>
@@ -12,7 +13,13 @@
         </ul>
         <ul ref="leftUl" id="social">
             <li>
-                <a href="https://www.linkedin.com/in/bela-lawson-636a43152/" target="_blank"><img width="30%" class="socialImg" src="https://image.flaticon.com/icons/svg/174/174857.svg"></a>
+                <a href="https://www.linkedin.com/in/bela-lawson-636a43152/" target="_blank"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/174/174857.svg"></a>
+            </li>
+        </ul>
+        <h3>Symphony API + VueJs (Password: mtp)</h3>
+        <ul ref="rightUl" id="websites2">
+            <li v-for="item in items2">
+                <a v-bind:href="item.url" target="_blank">{{ item.name }}</a>
             </li>
         </ul>
     </div>
@@ -255,6 +262,9 @@
                 { url:'https://finance.brussels', name: 'Finance Brussels' },
                 { url:'https://octaplus.be', name: 'Octa+' },
                 { url:'https://skylvape.com', name: 'Skylvape' },
+            ],
+            items2: [
+                { url:'https://ravethisway.herokuapp.com/', name: 'RaveThisWay' },
             ]
 
         },
@@ -335,5 +345,9 @@
         font-size: 4rem;
         color: midnightblue;
         padding-bottom: 2em;
+    }
+    h3 {
+        color: cadetblue;
+        padding: 1em;
     }
 </style>
