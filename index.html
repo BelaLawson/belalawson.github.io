@@ -10,7 +10,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
 
 <div id="app">
-    <div id="menu" ref="menuBar">
+    <div class="overlay" id="menu" ref="menuBar">
         <h1>Bela Lawson</h1>
         <h3>Recent Productions in Symfony/Wordpress</h3>
         <ul ref="rightUl" id="websites">
@@ -420,9 +420,11 @@
             transform: scale(-5) translateX(-1rem) translateY(-1.5rem);
         }
         #menu {
+            opacity: 50%;
             position: absolute;
             font-family: Open Sans, sans-serif;
             margin: 3em;
+            z-index: 20;
         }
         a:link {
             font-size: 2rem;
@@ -430,6 +432,37 @@
             text-decoration: none;
             text-transform: uppercase;
             /*padding: 1em;*/
+        }
+
+        .img:hover {
+
+            opacity: 10%;
+            /* HOVER ON */
+            -webkit-transition: opacity 1s;
+        }
+        a:hover {
+            text-decoration: lightblue;
+            padding: 20px;
+            color: darkgoldenrod;
+            font-size: 2.5rem;
+            margin: 1em;
+
+            /* HOVER ON */
+            -webkit-transition: color 5s, padding 1s, font-size 1s, margin 1s;
+        }
+
+        #menu:hover {
+            color: grey;
+            font-size: 2em;
+            padding: 1rem;
+            opacity: 150%;
+            -webkit-transition: opacity 1s, font-size 2s, padding 1s, color 4s;
+        }
+
+        a {
+            z-index: 19;
+
+            perspective: 30px;
         }
         ul {
             font-size: 1em;
@@ -509,7 +542,7 @@
         }
         #menu {
             background-color: transparent;
-            z-index: 10;
+            z-index: 20;
             position: absolute;
             font-family: Open Sans, sans-serif;
             margin: 4em;
@@ -551,6 +584,26 @@
         #container {
             z-index: 0;
             margin-right: 1.1em;
+        }
+        .img:hover {
+
+            opacity: 10%;
+            /* HOVER ON */
+            -webkit-transition: opacity 5s;
+        }
+        a:hover {
+            border-radius: 2em;
+            text-decoration: lightblue;
+            padding: 20px;
+            color: darkgoldenrod;
+            font-size: 2.5rem;
+            margin: 1em;
+
+            /* HOVER ON */
+            -webkit-transition: border-radius 2s, color 5s, padding 6s, font-size 3s, margin 15s;
+        }
+        a {
+            z-index: 19;
         }
     }
 </style>
