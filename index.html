@@ -1,3 +1,11 @@
+<meta CHARSET="UTF-8">
+<BASE HREF="belalawson.github.io">
+<TITLE>Bela LAWSON</TITLE>
+<noscript>Your browser does not support JavaScript!</noscript>
+<meta NAME="Bela Lawson - Portfolio" CONTENT="Web-Portfolio of Bela Lawson McIntosh">
+<meta name="description" content="All you need to know about Bela LAWSON">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
 
@@ -279,6 +287,7 @@
 <style>
     * {
         box-sizing: border-box;
+        mix-blend-mode: difference;
     }
 
     body {
@@ -361,5 +370,187 @@
     }
     #container {
         margin-left: 25rem;
+    }
+
+
+    /* If screen size is more than 600px wide, set the font-size of <div> to 80px */
+    @media screen and (min-width: 900px) {
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            mix-blend-mode: difference;
+            margin: 0;
+            z-index: -3;
+        }
+        a {
+            color: #08f;
+        }
+        #flex {
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+        }
+        #container {
+            margin: 0;
+            box-sizing: border-box;
+            z-index: -1;
+        }
+        .img {
+            mix-blend-mode: color-burn;
+            position: fixed;
+            z-index: -6;
+        }
+        #img1 {
+            height: 23%;
+            transform: scale(-6) translateY(-1rem);
+        }
+        #img2 {
+            height: 23%;
+            transform: scale(-3) translateX(-1rem) translateY(-2rem);
+        }
+        #img3 {
+            height: 23%;
+            transform: scale(-8) translateX(-1rem) translateY(-0.4rem);
+        }
+        #img4 {
+            height: 23%;
+            transform: scale(-5) translateX(-1rem) translateY(-1.5rem);
+        }
+        #menu {
+            position: absolute;
+            font-family: Open Sans, sans-serif;
+            margin: 3em;
+        }
+        a:link {
+            font-size: 2rem;
+            font-family: Open Sans, sans-serif;
+            text-decoration: none;
+            text-transform: uppercase;
+            /*padding: 1em;*/
+        }
+        ul {
+            font-size: 1em;
+            list-style-type: none;
+        }
+        li {
+            /*padding-bottom: 1em;*/
+            font-size: 1em;
+            color: aquamarine;
+        }
+        h1 {
+            /*font-size: 4rem;*/
+            color: midnightblue;
+            /*padding-bottom: 2em;*/
+            font-weight: 300;
+            font-size: 1.8em;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: cadetblue;
+            /*padding: 1em;*/
+            margin-top: 0;
+        }
+        #social {
+            margin: 1.5em;
+            padding: 2em;
+        }
+        #container {
+            margin-left: 25rem;
+        }
+    }
+
+    /* If screen size is 600px wide, or less, set the font-size of <div> to 30px */
+    @media screen and (max-width: 900px) {
+        * {
+            mix-blend-mode: difference;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            z-index: -3;
+        }
+        a {
+            color: #08f;
+        }
+        #flex {
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+        }
+        #container {
+            margin: 0;
+            box-sizing: border-box;
+            z-index: -1;
+        }
+        .img {
+            mix-blend-mode: color-burn;
+            position: relative;
+            z-index: -6;
+        }
+        #img1 {
+            height: 23%;
+            transform: scale(-6) translateY(-1rem);
+        }
+        #img2 {
+            height: 23%;
+            transform: scale(-3) translateX(-1rem) translateY(-2rem);
+        }
+        #img3 {
+            height: 23%;
+            transform: scale(-8) translateX(-1rem) translateY(-0.4rem);
+        }
+        #img4 {
+            height: 23%;
+            transform: scale(-5) translateX(-1rem) translateY(-1.5rem);
+        }
+        #menu {
+            position: absolute;
+            font-family: Open Sans, sans-serif;
+            margin: 0;
+        }
+        a:link {
+            font-size: 1.5rem;
+            font-family: Open Sans, sans-serif;
+            text-decoration: none;
+            text-transform: uppercase;
+            /*padding: 1em;*/
+        }
+        ul {
+            font-size: 1.5em;
+            list-style-type: none;
+        }
+        li {
+            /*padding-bottom: 1em;*/
+            font-size: 1em;
+            color: aquamarine;
+        }
+        h1 {
+            /*font-size: 4rem;*/
+            color: midnightblue;
+            /*padding-bottom: 2em;*/
+            font-weight: 300;
+            font-size: 2.4em;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.5em;
+            color: cadetblue;
+            padding-right: 1em;
+            margin-top: 0;
+        }
+        #social {
+            margin: 0.5em;
+            padding: 1em;
+        }
+        #container {
+            margin-top: 25rem;
+            margin-left: 2rem;
+        }
     }
 </style>
