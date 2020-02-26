@@ -413,20 +413,20 @@
     /* If screen size is 600px wide, or less, set the font-size of <div> to 30px */
     @media screen and (max-width: 900px) {
         * {
-            mix-blend-mode: multiply;
+            mix-blend-mode: hard-light;
         }
 
         body {
             margin: 0;
         }
         a {
-            color: darkblue;
+            color: darkslategray;
         }
         #flex {
             margin: 0;
-            /*box-sizing: border-box;*/
+            box-sizing: border-box;
             display: flex;
-            /*justify-content: center;*/
+            justify-content: center;
         }
         #container {
             display: none;
@@ -435,21 +435,25 @@
             /*z-index: 5;*/
         }
         .img {
+            mix-blend-mode: color-dodge;
+            width: 90px;
             opacity: 15%;
             z-index: -50;
         }
         #img1 {
-            height: 13%;
+            /*height: 13%;*/
+            transform: scale(-2) translateX(2rem) translateY(-10rem);
         }
         #img2 {
-            height: 13%;
-            transform: scale(-3) translateX(-1rem) translateY(-2rem);
+            /*height: 13%;*/
+            transform: scale(-3) translateX(-0.8rem) translateY(-6rem);
         }
         #img3 {
-            height: 13%;
+            /*height: 13%;*/
         }
         #img4 {
-            height: 13%;
+            /*height: 13%;*/
+            transform: translateX(-2rem) translateY(-15rem);
         }
         #menu {
             z-index: 20;
@@ -479,7 +483,7 @@
         }
         h3 {
             font-size: 1.5em;
-            color: darkturquoise;
+            color: midnightblue;
             padding-right: 1em;
             margin-top: 0;
         }
