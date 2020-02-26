@@ -413,7 +413,6 @@
     /* If screen size is 600px wide, or less, set the font-size of <div> to 30px */
     @media screen and (max-width: 900px) {
         * {
-            mix-blend-mode: hard-light;
         }
 
         body {
@@ -435,23 +434,27 @@
             /*z-index: 5;*/
         }
         .img {
-            mix-blend-mode: color-dodge;
+            mix-blend-mode: multiply;
             width: 90px;
-            opacity: 15%;
+            opacity: 5%;
             z-index: -50;
         }
         #img1 {
+            opacity: 5%;
             /*height: 13%;*/
             transform: scale(-2) translateX(2rem) translateY(-10rem);
         }
         #img2 {
+            opacity: 5%;
             /*height: 13%;*/
             transform: scale(-3) translateX(-0.8rem) translateY(-6rem);
         }
         #img3 {
+            opacity: 5%;
             /*height: 13%;*/
         }
         #img4 {
+            opacity: 5%;
             /*height: 13%;*/
             transform: translateX(-2rem) translateY(-15rem);
         }
