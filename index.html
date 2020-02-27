@@ -303,6 +303,7 @@
         }
         a {
             color: #08f;
+            -webkit-transition: color 5s;
         }
         #flex {
             margin: 0;
@@ -340,7 +341,9 @@
             transform: scale(-5) translateX(-1rem) translateY(-1.5rem);
         }
         #menu {
-            opacity: 50%;
+            color: grey;
+            font-size: 1.7em;
+            padding: 0.7rem;
             position: absolute;
             font-family: benton-sans-condensed, sans-serif;
             margin: 3em;
@@ -360,22 +363,16 @@
             /* HOVER ON */
             -webkit-transition: opacity 1s;
         }
+        li:hover {
+            transform: translateX(1.1em) rotate(1deg) scale(1.1);
+
+            -webkit-transition: transform 1s;
+        }
         a:hover {
             text-decoration: lightblue;
-            padding: 8px;
             color: darkgoldenrod;
-            font-size: 2.3rem;
-            margin: 0.4em;
 
-            -webkit-transition: color 5s, padding 1s, font-size 1s, margin 1s;
-        }
-
-        #menu:hover {
-            color: grey;
-            font-size: 1.7em;
-            padding: 0.7rem;
-            opacity: 150%;
-            -webkit-transition: opacity 1s, font-size 2s, padding 1s, color 4s;
+            -webkit-transition: color 5s;
         }
 
         a {
@@ -388,9 +385,9 @@
             list-style-type: none;
         }
         li {
-            /*padding-bottom: 1em;*/
             font-size: 1em;
             color: aquamarine;
+            -webkit-transition: transform 1s;
         }
         h1 {
             /*font-size: 4rem;*/
