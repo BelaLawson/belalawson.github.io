@@ -21,21 +21,27 @@
         <h3>Symphony API + VueJs PWA</h3>
         <ul ref="rightUl" id="websites2">
             <li v-for="item in items2">
-                <a v-bind:href="item.url" target="_blank">{{ item.name }}</a>
+                <a v-bind:href="item.url" target="_blank"><div class="float-link">{{ item.name }}</div></a>
             </li>
         </ul>
         <ul ref="leftUl" id="social">
             <li>
-                <a href="https://www.linkedin.com/in/bela-lawson-636a43152/" target="_blank"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/174/174857.svg"></a>
+                <a href="https://www.linkedin.com/in/bela-lawson-636a43152/" target="_blank"><div class="float-link"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/174/174857.svg"></div></a>
             </li>
             <li>
-                <a href="https://www.instagram.com/octo_shark/" target="_blank"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/1409/1409946.svg"></a>
+                <div class="float-link">
+                    <a href="https://www.instagram.com/octo_shark/" target="_blank"><div class="float-link"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/1409/1409946.svg"></div></a>
+                </div>
             </li>
             <li>
-                <a href="https://facebook.com/octoshark.music/" target="_blank"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/733/733547.svg"></a>
+                <div class="float-link">
+                    <a href="https://facebook.com/octoshark.music/" target="_blank"><div class="float-link"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/733/733547.svg"></div></a>
+                </div>
             </li>
             <li>
-                <a href="https://soundcloud.com/octo-shark" target="_blank"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/255/255327.svg"></a>
+                <div class="float-link">
+                    <a href="https://soundcloud.com/octo-shark" target="_blank"><div class="float-link"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/255/255327.svg"></div></a>
+                </div>
             </li>
         </ul>
     </div>
@@ -314,7 +320,7 @@
         }
         a {
             color: #08f;
-            transition: color 0.3s;
+            transition: color 5s;
         }
         #flex {
             margin: 0;
@@ -364,27 +370,26 @@
             font-family: benton-sans-condensed, sans-serif;
             text-decoration: none;
             text-transform: uppercase;
-            /*padding: 1em;*/
         }
-
         .img:hover {
-
             opacity: 10%;
-            /* HOVER ON */
-            -webkit-transition: opacity 1s;
+            transition: opacity 1s;
         }
-        li:hover {
+        .float-link:hover {
+            filter: saturate(1000%);
             transform: translateX(1.1em) rotate(1deg) scale(1.1);
-
-            -webkit-transition: transform 0.3s;
+            transition: transform 0.3s, filter 10s;
         }
         a:hover {
             text-decoration: lightblue;
             color: darkgoldenrod;
-
-            transition: color 0.3s;
+            transition: color 5s;
         }
-
+        .float-link {
+            padding-top: 0.05em;
+            padding-bottom: 0.05em;
+            transition: transform 0.3s, filter 10s;
+        }
         a {
             z-index: 19;
 
