@@ -46,10 +46,12 @@
         </ul>
     </div>
     <div id="flex">
-        <img id="img1" class="img" src="https://picsum.photos/400/800">
-        <img id="img2" class="img" src="https://picsum.photos/400/800">
-        <img id="img3" class="img" src="https://picsum.photos/400/800">
-        <img id="img4" class="img" src="https://picsum.photos/400/800">
+        <div class="imgs">
+            <img id="img1" class="img" src="https://picsum.photos/400/800">
+            <img id="img2" class="img" src="https://picsum.photos/400/800">
+            <img id="img3" class="img" src="https://picsum.photos/400/800">
+            <img id="img4" class="img" src="https://picsum.photos/400/800">
+        </div>
         <div id="container"></div>
 
         <script type="module">
@@ -67,7 +69,7 @@
                 var windowHalfY = window.innerHeight / 2;
 
                 init();
-                animate();
+                render();
 
                 function init() {
                     container = document.getElementById('container');
@@ -89,44 +91,6 @@
                     var light3 = new THREE.DirectionalLight(0xffffff);
                     light3.position.set(0, -8, -2);
                     scene.add(light3);
-
-                    // shadow
-
-                    // var canvas = document.createElement( 'canvas' );
-                    // canvas.width = 128;
-                    // canvas.height = 128;
-                    //
-                    // var context = canvas.getContext( '2d' );
-                    // var gradient = context.createRadialGradient( canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width / 2 );
-                    // gradient.addColorStop( 0.1, 'rgba(10,180,210,1)' );
-                    // gradient.addColorStop( 1, 'rgba(55,155,255,1)' );
-                    //
-                    // context.fillStyle = gradient;
-                    // context.fillRect( 0, 0, canvas.width, canvas.height );
-
-                    // var shadowTexture = new THREE.CanvasTexture( canvas );
-                    //
-                    // var shadowMaterial = new THREE.MeshBasicMaterial( { map: shadowTexture } );
-                    // var shadowGeo = new THREE.PlaneBufferGeometry( 300, 300, 1, 1 );
-                    //
-                    // var shadowMesh;
-                    //
-                    // shadowMesh = new THREE.Mesh( shadowGeo, shadowMaterial );
-                    // shadowMesh.position.y = - 250;
-                    // shadowMesh.rotation.x = - Math.PI / 2;
-                    // scene.add( shadowMesh );
-                    //
-                    // shadowMesh = new THREE.Mesh( shadowGeo, shadowMaterial );
-                    // shadowMesh.position.y = - 250;
-                    // shadowMesh.position.x = - 400;
-                    // shadowMesh.rotation.x = - Math.PI / 2;
-                    // scene.add( shadowMesh );
-                    //
-                    // shadowMesh = new THREE.Mesh( shadowGeo, shadowMaterial );
-                    // shadowMesh.position.y = - 250;
-                    // shadowMesh.position.x = 400;
-                    // shadowMesh.rotation.x = - Math.PI / 2;
-                    // scene.add( shadowMesh );
 
                     var radius = 300;
 
@@ -162,7 +126,7 @@
                     var texture = new THREE.TextureLoader().load('https://picsum.photos/1000');
 
                     var material = new THREE.MeshPhongMaterial({
-                        color: 0xffffff,
+                        color: 0x000fff,
                         alphaMap: texture,
                         flatShading: true,
                         vertexColors: THREE.VertexColors,
@@ -171,22 +135,22 @@
                     });
 
                     var wireframeMaterial = new THREE.MeshBasicMaterial({
-                        color: 0x000000,
+                        color: 0x00000f,
                         wireframe: true,
                         transparent: true
                     });
 
-                    var mesh = new THREE.Mesh(geometry1, material);
-                    var wireframe = new THREE.Mesh(geometry1, wireframeMaterial);
-                    mesh.add(wireframe);
-                    mesh.position.x = -400;
-                    mesh.rotation.x = -3.87;
+                    // var mesh = new THREE.Mesh(geometry1, material);
+                    // var wireframe = new THREE.Mesh(geometry1, wireframeMaterial);
+                    // mesh.add(wireframe);
+                    // mesh.position.x = -400;
+                    // mesh.rotation.x = -3.87;
                     //scene.add( mesh );
 
-                    var mesh = new THREE.Mesh(geometry2, material);
-                    var wireframe = new THREE.Mesh(geometry2, wireframeMaterial);
-                    mesh.add(wireframe);
-                    mesh.position.x = 400;
+                    // var mesh = new THREE.Mesh(geometry2, material);
+                    // var wireframe = new THREE.Mesh(geometry2, wireframeMaterial);
+                    // mesh.add(wireframe);
+                    // mesh.position.x = 400;
                     //scene.add( mesh );
 
                     var mesh = new THREE.Mesh(geometry3, material);
@@ -225,6 +189,14 @@
 
                     renderer.setSize(window.innerWidth, window.innerHeight);
 
+
+
+                }
+
+                function animate() {
+                    requestAnimationFrame(animate);
+
+                    render();
                 }
 
                 function onDocumentMouseMove(event) {
@@ -252,16 +224,6 @@
 
                 }
 
-                //
-
-                function animate() {
-
-                    requestAnimationFrame(animate);
-
-                    render();
-
-                }
-
                 function render() {
 
                     camera.position.x += (mouseX - camera.position.x);
@@ -274,6 +236,11 @@
                     renderer.render(scene, camera);
 
                 }
+
+                document.getElementById('flex').addEventListener('mousemove', function () {
+                    //requestAnimationFrame(animate);
+                    render();
+                });
             }
         </script>
     </div>
@@ -295,13 +262,6 @@
                 { url:'https://api-platform-admin.herokuapp.com/admin/', name: 'Admin Zone' },
                 { url:'https://ravethisway.github.io/', name: '*Firebase Version*' },
             ]
-
-        },
-        methods: {
-
-        },
-        created: function() {
-
         }
     })
 </script>
@@ -329,9 +289,14 @@
             justify-content: center;
         }
         #container {
+            background-color: cadetblue;
             margin: 0;
             box-sizing: border-box;
             z-index: 1;
+        }
+        .imgs {
+            margin-right: 2em;
+            position: fixed;
         }
         .img {
             mix-blend-mode: color-burn;
@@ -405,9 +370,7 @@
             transition: transform 0.3s;
         }
         h1 {
-            /*font-size: 4rem;*/
             color: black;
-            /*padding-bottom: 2em;*/
             font-weight: bold;
             font-size: 1.8em;
             margin-top: 0;
@@ -439,14 +402,10 @@
             display: none;
             margin: 0;
             box-sizing: border-box;
-            /*display: flex;*/
             justify-content: center;
         }
         #container {
             display: none;
-            /*margin: 0;*/
-            /*box-sizing: border-box;*/
-            /*z-index: 5;*/
         }
         .img {
             mix-blend-mode: multiply;
@@ -456,21 +415,17 @@
         }
         #img1 {
             opacity: 5%;
-            /*height: 13%;*/
             transform: scale(-2) translateX(2rem) translateY(-10rem);
         }
         #img2 {
             opacity: 5%;
-            /*height: 13%;*/
             transform: scale(-3) translateX(-0.8rem) translateY(-6rem);
         }
         #img3 {
             opacity: 5%;
-            /*height: 13%;*/
         }
         #img4 {
             opacity: 5%;
-            /*height: 13%;*/
             transform: translateX(-2rem) translateY(-15rem);
         }
         #menu {
