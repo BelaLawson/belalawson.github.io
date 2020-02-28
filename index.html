@@ -26,22 +26,19 @@
         </ul>
         <ul ref="leftUl" id="social">
             <li>
-                <a href="https://www.linkedin.com/in/bela-lawson-636a43152/" target="_blank"><div class="float-link"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/174/174857.svg"></div></a>
+                <a href="https://www.linkedin.com/in/bela-lawson-636a43152/" target="_blank"><div class="float-link-social"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/174/174857.svg"></div></a>
             </li>
             <li>
-                <div class="float-link">
-                    <a href="https://www.instagram.com/octo_shark/" target="_blank"><div class="float-link"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/1409/1409946.svg"></div></a>
-                </div>
+                <a href="https://www.instagram.com/octo_shark/" target="_blank"><div class="float-link-social"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/1409/1409946.svg"></div></a>
+
             </li>
             <li>
-                <div class="float-link">
-                    <a href="https://facebook.com/octoshark.music/" target="_blank"><div class="float-link"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/733/733547.svg"></div></a>
-                </div>
+                <a href="https://facebook.com/octoshark.music/" target="_blank"><div class="float-link-social"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/733/733547.svg"></div></a>
+
             </li>
             <li>
-                <div class="float-link">
-                    <a href="https://soundcloud.com/octo-shark" target="_blank"><div class="float-link"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/255/255327.svg"></div></a>
-                </div>
+                <a href="https://soundcloud.com/octo-shark" target="_blank"><div class="float-link-social"><img width="10%" class="socialImg" src="https://image.flaticon.com/icons/svg/255/255327.svg"></div></a>
+
             </li>
         </ul>
     </div>
@@ -270,7 +267,6 @@
     /* If screen size is more than 600px wide, set the font-size of <div> to 80px */
     @media screen and (min-width: 900px) {
         * {
-            mix-blend-mode: luminosity;
             box-sizing: border-box;
         }
 
@@ -289,17 +285,17 @@
             justify-content: center;
         }
         #container {
+            mix-blend-mode: luminosity;
+            margin-left: 25rem;
             background-color: cadetblue;
-            margin: 0;
             box-sizing: border-box;
-            z-index: 1;
         }
         .imgs {
+            z-index: -1;
             margin-right: 2em;
             position: fixed;
         }
         .img {
-            mix-blend-mode: color-burn;
             position: fixed;
         }
         #img1 {
@@ -345,6 +341,11 @@
             transform: translateX(1.1em) rotate(1deg) scale(1.1);
             transition: transform 0.3s, filter 10s;
         }
+        .float-link-social:hover {
+            filter: saturate(1000%);
+            transform: translateX(0.1em) rotate(1deg) scale(1.1);
+            transition: transform 0.3s, filter 10s;
+        }
         a:hover {
             text-decoration: lightblue;
             color: darkgoldenrod;
@@ -353,6 +354,9 @@
         .float-link {
             padding-top: 0.05em;
             padding-bottom: 0.05em;
+            transition: transform 0.3s, filter 10s;
+        }
+        .float-link-social {
             transition: transform 0.3s, filter 10s;
         }
         a {
@@ -382,8 +386,16 @@
             color: cadetblue;
             margin-top: 0;
         }
-        #container {
-            margin-left: 25rem;
+        #social img{
+            filter: saturate(0%);
+            width: 2em;
+            padding: 0.3em;
+        }
+        #social {
+            position: fixed;
+            bottom:0;
+            right:0;
+            display: flex;
         }
     }
 
@@ -396,6 +408,7 @@
             margin: 0;
         }
         #flex {
+            display: none;
             margin: 0;
             box-sizing: border-box;
             justify-content: center;
@@ -470,8 +483,10 @@
             padding: 0.3em;
         }
         #social {
-            transform: translateX(5em);
-            margin-top: 3em;
+            filter: saturate(0%);
+            position: fixed;
+            bottom:0;
+            right:0;
             display: flex;
         }
         #websites2 li {
