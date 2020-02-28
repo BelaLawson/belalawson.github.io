@@ -395,11 +395,7 @@
         body {
             margin: 0;
         }
-        a {
-            color: darkslategray;
-        }
         #flex {
-            display: none;
             margin: 0;
             box-sizing: border-box;
             justify-content: center;
@@ -435,10 +431,13 @@
             margin: 3em;
         }
         a:link {
-            font-size: 1.5rem;
+            font-size: 1em;
             font-family: benton-sans-condensed, sans-serif;
             text-decoration: none;
             text-transform: uppercase;
+        }
+        a {
+            color: #0088ff;
         }
         ul {
             font-size: 1.5em;
@@ -457,10 +456,27 @@
         }
         h3 {
             font-family: benton-sans-condensed, sans-serif;
-            font-size: 1.5em;
-            color: midnightblue;
+            font-size: 1em;
+            color: darkcyan;
             padding-right: 1em;
             margin-top: 0;
+        }
+        .float-link {
+            padding-top: 0.05em;
+            padding-bottom: 0.05em;
+        }
+        #social img{
+            width: 1em;
+            padding: 0.3em;
+        }
+        #social {
+            transform: translateX(5em);
+            margin-top: 3em;
+            display: flex;
+        }
+        #websites2 li {
+            transform: translateX(-1em);
+            padding-top: 1em;
         }
     }
 </style>
